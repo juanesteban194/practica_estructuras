@@ -1,7 +1,7 @@
 from __future__ import annotations
 from typing import List, Tuple, Set
 
-from .persona import Persona  
+from persona import Persona  
        
 class Matriz:
     
@@ -80,6 +80,19 @@ class Matriz:
         persona.set_posicion(nueva_x, nueva_y)
         
         return self.agregar_persona(persona)
+    
+    def mover_diagonal(self, persona: Persona, nueva_x: int, nueva_y: int):
+
+        for x, y in self.get_posicion(persona):
+            self.x = x
+            self.y = y
+            
+        for fila in self.celdas:
+            for columna in self.celdas[fila]:
+                x = columna - 1
+                y = fila - 1
+                return self.mover_diagonal(persona, nueva_x = x, nueva_y = y )
+         
 
     def obtener_personas_en(self, x: int, y: int) -> list[Persona]:
         if not self.esta_dentro_limites(x, y):
@@ -174,5 +187,3 @@ class Matriz:
         texto = texto + "\n🟩 = Sana  🟥 = Infectada  🟨 = Mixta\n"
         
         return texto
-
-

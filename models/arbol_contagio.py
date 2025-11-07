@@ -103,6 +103,12 @@ class ArbolContagio:
                 profundidad_maxima = nivel_nodo
         
         return profundidad_maxima
+    
+    def cuarar_k_rama(self, k:int):
+
+        persona = persona.id
+        if k == self.get_profundidad:
+            self.nodos[persona] = self.persona.curar()          
 
     def visualizar(self) -> str:
         if self.raiz is None:
@@ -145,5 +151,4 @@ class ArbolContagio:
             texto = texto + self._construir_string_recursivo(hijo, prefijo_hijos, es_ultimo_hijo)
         
         return texto
-
 
