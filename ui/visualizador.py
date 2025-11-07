@@ -118,13 +118,4 @@ class Visualizador:
     def _gris(self, s: str) -> str:  return self._color(s, "\033[90m")
 
 
-# Prueba rápida independiente
-if __name__ == "__main__":
-    # Pequeña demo si quieres probar directo este archivo
-    from core.simulador import Simulador
-    sim = Simulador(tamano_matriz=6, cantidad_personas=8, defensa_inicial=3, semilla_aleatoria=7)
-    sim.inicializar()
-    viz = Visualizador()
-    viz.mostrar_matriz(sim)
-    viz.mostrar_tabla_personas(sim)
-    viz.mostrar_arbol(sim)
+

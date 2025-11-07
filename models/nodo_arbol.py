@@ -13,16 +13,15 @@ class NodoArbol:
 
     def agregar_hijo(self, nodo_hijo: 'NodoArbol') -> None:
         ya_existe = False
+        
         for hijo_actual in self.hijos:
-            if hijo_actual == nodo_hijo:
+            if hijo_actual.persona == nodo_hijo.persona:
                 ya_existe = True
                 break
-        
-        es_el_mismo_nodo = (nodo_hijo == self)
-        
-        if not ya_existe and not es_el_mismo_nodo:
-            self.hijos.append(nodo_hijo)
+        if not ya_existe:
+            # Setea el padre del nuevo hijo como este nodo.
             nodo_hijo.padre = self
+            self.hijos.append(nodo_hijo)
 
     def eliminar_hijo(self, nodo_hijo: 'NodoArbol') -> bool:
         hijo_encontrado = False

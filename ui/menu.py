@@ -19,16 +19,15 @@ class MenuPrincipal:
     Opciones:
       1) Crear simulador
       2) Inicializar simulación
-      3) Ejecutar 1 ronda (muestra tabla de vida)
-      4) Ejecutar varias rondas (muestra tabla cada ronda)
-      5) Curar persona (x, y)
-      6) Agregar persona (x, y)
-      7) Ver matriz
-      8) Ver árbol de contagio
-      9) Ver estadísticas
-     10) Infectar manualmente por id (además del inicial)
-     11) Ver tabla de personas (vida/estado)
-      0) Salir
+      3) Ejecutar varias rondas
+      4) Curar persona (x, y)
+      5) Agregar persona (x, y)
+      6) Ver matriz
+      7) Ver árbol de contagio
+      8) Ver estadísticas
+      9) Infectar manualmente por id 
+     10) Ver tabla de personas (vida/estado)
+      0) Salir\
     """
 
     def __init__(self) -> None:
@@ -44,15 +43,14 @@ class MenuPrincipal:
             print("\nOpciones:")
             print(" 1) Crear simulador")
             print(" 2) Inicializar simulación")
-            print(" 3) Ejecutar 1 ronda (muestra tabla de vida)")
-            print(" 4) Ejecutar varias rondas (muestra tabla cada ronda)")
-            print(" 5) Curar persona (x, y)")
-            print(" 6) Agregar persona (x, y)")
-            print(" 7) Ver matriz")
-            print(" 8) Ver árbol de contagio")
-            print(" 9) Ver estadísticas")
-            print("10) Infectar manualmente por id (además del inicial)")
-            print("11) Ver tabla de personas (vida/estado)")
+            print(" 3) Ejecutar varias rondas (muestra tabla cada ronda)")
+            print(" 4) Curar persona (x, y)")
+            print(" 5) Agregar persona (x, y)")
+            print(" 6) Ver matriz")
+            print(" 7) Ver árbol de contagio")
+            print(" 8) Ver estadísticas")
+            print(" 9) Infectar manualmente por id (además del inicial)")
+            print("10) Ver tabla de personas (vida/estado)")
             print(" 0) Salir")
 
             opcion = input("\nElige una opción: ").strip()
@@ -62,22 +60,20 @@ class MenuPrincipal:
             elif opcion == "2":
                 self._inicializar()
             elif opcion == "3":
-                self._ejecutar_una_ronda()
-            elif opcion == "4":
                 self._ejecutar_varias_rondas()
-            elif opcion == "5":
+            elif opcion == "4":
                 self._curar_persona()
-            elif opcion == "6":
+            elif opcion == "5":
                 self._agregar_persona()
-            elif opcion == "7":
+            elif opcion == "6":
                 self._mostrar_matriz()
-            elif opcion == "8":
+            elif opcion == "7":
                 self._mostrar_arbol()
-            elif opcion == "9":
+            elif opcion == "8":
                 self._mostrar_estadisticas()
-            elif opcion == "10":
+            elif opcion == "9":
                 self._infectar_por_id()
-            elif opcion == "11":
+            elif opcion == "10":
                 self._mostrar_tabla_personas()
             elif opcion == "0":
                 print("\nHasta luego 👋")
